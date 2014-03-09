@@ -63,11 +63,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CellABC";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text=[datas objectAtIndex:indexPath.row];
+    
+
+    
+    cell.textLabel.text=@"AAA";
+//    cell.textLabel.text=[datas objectAtIndex:indexPath.row];
     
     return cell;
 }
