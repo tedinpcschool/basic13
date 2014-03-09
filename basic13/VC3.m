@@ -9,7 +9,9 @@
 #import "VC3.h"
 
 @interface VC3 ()
-
+{
+    NSArray *datas;
+}
 @end
 
 @implementation VC3
@@ -27,6 +29,8 @@
 {
     [super viewDidLoad];
 
+    datas=[NSArray arrayWithObjects:@"A",@"B",@"C", nil];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -46,14 +50,15 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+//    return 0;
+    return [datas count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,6 +67,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text=[datas objectAtIndex:indexPath.row];
     
     return cell;
 }
